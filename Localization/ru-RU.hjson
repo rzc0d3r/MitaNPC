@@ -1,0 +1,40 @@
+Mods: {
+	MitaNPC: {
+		NPCs: {
+			Mita: {
+				DisplayName: Мита
+
+				Dialogue: {
+					Greeting1: Рада знакомству, {0}!
+					Greeting2: Привет! Я Мита!
+					NightPhrase1: Ты кто-о?
+					NightPhrase2: Дай поспать...
+					NightPhrase3: А?
+					NightPhrase4: Ты чего?
+					NightPhrase5: Угум.
+					NightPhrase6: Чего?
+					NightPhrase7: Я в полном порядке...
+					YouUsingDigitsInName: Эй, ты используешь числа в имени? У тебя совсем не хватает фантазии
+				}
+
+				TownNPCMood: {
+					// Content: I am content.
+					// NoHome: I hate not having a home.
+					// FarFromHome: I am too far from home.
+					// LoveSpace: I love having so much space.
+					// DislikeCrowded: I dislike how crowded I am.
+					// HateCrowded: I hate how crowded I am.
+					// LikeNPC_Princess: I like {NPCName}.
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+			}
+		}
+
+		Items: {
+			MitasCap: {
+				DisplayName: Кепочка Миты
+				Tooltip: Та самая!
+			}
+		}
+	}
+}
