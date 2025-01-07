@@ -1,1 +1,5 @@
 Your personal Mita from MiSide in Terraria!!!
+
+Adds a new NPC named Mita from the MiSide game, who sells his hat and Psycho Knife during the blood moon.
+Features 2 voice acting options: Russian and Japanese
+Realized 2 text language options: Russian and English
