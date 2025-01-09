@@ -35,6 +35,19 @@ Mods: {
 				DisplayName: Mita's Cap
 				Tooltip: That's the one!
 			}
+
+			TravelRing: {
+				DisplayName: Travel Ring
+				Tooltip:
+					'''
+					{0}% increased movement speed
+					Press [KEY] to teleport to the mouse position.
+					Teleportation is not possible while the chaos state is active
+					Only works if it is in the accessory slot!!!!
+					'''
+			}
 		}
+
+		Keybinds.TravelRingHotKey.DisplayName: Travel Ring
 	}
 }

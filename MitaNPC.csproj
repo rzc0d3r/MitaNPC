@@ -8,6 +8,7 @@
 		
 	</PropertyGroup>
 	<ItemGroup>
+	  <None Remove="Items\Accessories\TravelRing.png" />
 	  <None Remove="Items\Armor\Vanity\MitasCap.png" />
 	  <None Remove="Items\Armor\Vanity\MitasCap_Head.png" />
 	  <None Remove="Localization\ru-RU.hjson" />
@@ -15,9 +16,6 @@
 	  <None Remove="NPCs\TownNPCs\Mita2.png" />
 	  <None Remove="NPCs\TownNPCs\Mita3.png" />
 	  <None Remove="NPCs\TownNPCs\Mita_Head.png" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Items\Weapons\Melee\" />
 	</ItemGroup>
 
 	<!-- References -->

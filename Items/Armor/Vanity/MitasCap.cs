@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace MitaNPC.Items.Armor.Vanity
 {
     [AutoloadEquip(EquipType.Head)]
-    public class MitasCap : ModItem
+    public class MitasCap: ModItem
     {
         public override void SetStaticDefaults()
         {

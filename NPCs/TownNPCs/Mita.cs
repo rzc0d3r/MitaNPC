@@ -1,6 +1,4 @@
-﻿using MitaNPC.Items.Armor.Vanity;
-
-using Terraria;
+﻿using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.Localization;
@@ -10,6 +8,9 @@ using Terraria.Utilities;
 using System;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+
+using MitaNPC.Items.Armor.Vanity;
+using MitaNPC.Items.Accessories;
 
 namespace MitaNPC.NPCs.TownNPCs
 {
@@ -67,10 +68,9 @@ namespace MitaNPC.NPCs.TownNPCs
             string nightPhrase6 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.Dialogue.NightPhrase6");
             string nightPhrase7 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.Dialogue.NightPhrase7");
             string youUsingDigitsInName = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.Dialogue.YouUsingDigitsInName");
-            
+
             if (Main.IsItDay()) // Daytime chat
             {
-
                 chat.Add(greeting1);
                 chat.Add(greeting2);
                 foreach (char ch in Main.LocalPlayer.name)
@@ -138,7 +138,8 @@ namespace MitaNPC.NPCs.TownNPCs
         {
             NPCShop npcShop = new NPCShop(Type, Shop1);
             npcShop.Add(ModContent.ItemType<MitasCap>());
-            npcShop.Add(new Item(ItemID.PsychoKnife) { shopCustomPrice = Item.buyPrice(1, 0, 0, 0) }, Condition.BloodMoon);
+            npcShop.Add(ModContent.ItemType<TravelRing>());
+            npcShop.Add(new Item(ItemID.PsychoKnife) { shopCustomPrice = Item.buyPrice(2, 50, 0, 0) }, Condition.BloodMoon);
             npcShop.Register();
         }
 
