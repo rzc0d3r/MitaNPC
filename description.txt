@@ -7,4 +7,5 @@ Realized 2 text language options: Russian and English
 Shop:
 1. Mita's Cap
 2. Travel Ring (Analog of the Normality Relocator from Calamity, Default HotKey is Q)
-3. Psycho Knife (during Blood Moon)
+3. Carrot (Consumable, Medium improvements to all stats - 3m)
+4. Psycho Knife (during Blood Moon)

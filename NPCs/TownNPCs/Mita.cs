@@ -4,6 +4,7 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.Utilities;
+using Terraria.GameContent.Personalities;
 
 using System;
 using Microsoft.Xna.Framework.Graphics;
@@ -11,6 +12,8 @@ using Microsoft.Xna.Framework;
 
 using MitaNPC.Items.Armor.Vanity;
 using MitaNPC.Items.Accessories;
+using MitaNPC.Items.Potions;
+
 
 namespace MitaNPC.NPCs.TownNPCs
 {
@@ -30,6 +33,28 @@ namespace MitaNPC.NPCs.TownNPCs
             NPCID.Sets.AttackTime[Type] = 10; // The amount of time it takes for the NPC's attack animation to be over once it starts. Measured in ticks. There are 60 ticks per second, so an amount of 90 will take 1.5 seconds.
             NPCID.Sets.AttackAverageChance[Type] = 1; // The denominator for the chance for a Town NPC to attack. Lower numbers make the Town NPC appear more aggressive.
             NPCID.Sets.HatOffsetY[Type] = 4; // For when a party is active, the party hat spawns at a Y offset. Adjust this number to change where on your NPC's head the party hat sits.
+            NPC.Happiness
+                .SetBiomeAffection<UndergroundBiome>(AffectionLevel.Love)
+                .SetBiomeAffection<ForestBiome>(AffectionLevel.Like)
+                .SetBiomeAffection<HallowBiome>(AffectionLevel.Dislike)
+                .SetBiomeAffection<JungleBiome>(AffectionLevel.Dislike)
+
+                .SetNPCAffection(NPCID.Angler, AffectionLevel.Love)
+                .SetNPCAffection(NPCID.ArmsDealer, AffectionLevel.Like)
+                .SetNPCAffection(NPCID.Painter, AffectionLevel.Like)
+                .SetNPCAffection(NPCID.Demolitionist, AffectionLevel.Like)
+                .SetNPCAffection(NPCID.Truffle, AffectionLevel.Dislike)
+
+                // Hates all girls (NPC)
+                .SetNPCAffection(NPCID.Nurse, AffectionLevel.Hate)
+                .SetNPCAffection(NPCID.BestiaryGirl, AffectionLevel.Hate)
+                .SetNPCAffection(NPCID.Dryad, AffectionLevel.Hate)
+                .SetNPCAffection(NPCID.Stylist, AffectionLevel.Hate)
+                .SetNPCAffection(NPCID.Mechanic, AffectionLevel.Hate)
+                .SetNPCAffection(NPCID.PartyGirl, AffectionLevel.Hate)
+                .SetNPCAffection(NPCID.Steampunker, AffectionLevel.Hate)
+                .SetNPCAffection(NPCID.Princess, AffectionLevel.Hate)
+            ;
         }
 
         public override void SetDefaults()
@@ -139,6 +164,7 @@ namespace MitaNPC.NPCs.TownNPCs
             NPCShop npcShop = new NPCShop(Type, Shop1);
             npcShop.Add(ModContent.ItemType<MitasCap>());
             npcShop.Add(ModContent.ItemType<TravelRing>());
+            npcShop.Add(ModContent.ItemType<Carrot>());
             npcShop.Add(new Item(ItemID.PsychoKnife) { shopCustomPrice = Item.buyPrice(2, 50, 0, 0) }, Condition.BloodMoon);
             npcShop.Register();
         }

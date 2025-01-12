@@ -18,14 +18,21 @@ Mods: {
 				}
 
 				TownNPCMood: {
-					Content: I am content.
-					NoHome: I hate not having a home.
-					FarFromHome: I am too far from home.
-					LoveSpace: I love having so much space.
-					DislikeCrowded: I dislike how crowded I am.
-					HateCrowded: I hate how crowded I am.
+					Content: I'm happy! I love being here. It's so cozy here)
+					NoHome: I wish I had a home :(
+					FarFromHome: I'm too far away from home. I'm sad :(
+					LoveSpace: I like to have few people around, I don't like unnecessary stares)
+					DislikeCrowded: I don't like the noise around me!
+					HateCrowded: I hate all those people around me!!!
 					LikeNPC_Princess: I like {NPCName}.
 					Princess_LovesNPC: I like {NPCName}.
+					LoveBiome: I like {BiomeName}.
+					LikeBiome: I like {BiomeName}.
+					DislikeBiome: I don't like {BiomeName}.
+					LoveNPC: I like {NPCName}.
+					LikeNPC: I like {NPCName}.
+					DislikeNPC: I don't like {NPCName}.
+					HateNPC: I hate {NPCName}.
 				}
 			}
 		}
@@ -44,6 +51,15 @@ Mods: {
 					Press [KEY] to teleport to the mouse position.
 					Teleportation is not possible while the chaos state is active
 					Only works if it is in the accessory slot!!!!
+					'''
+			}
+
+			Carrot: {
+				DisplayName: Carrot
+				Tooltip:
+					'''
+					{$CommonItemTooltip.MediumStats}
+					'And then cut carrots, and then...'
 					'''
 			}
 		}

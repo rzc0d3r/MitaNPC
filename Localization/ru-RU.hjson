@@ -18,14 +18,21 @@ Mods: {
 				}
 
 				TownNPCMood: {
-					// Content: I am content.
-					// NoHome: I hate not having a home.
-					// FarFromHome: I am too far from home.
-					// LoveSpace: I love having so much space.
-					// DislikeCrowded: I dislike how crowded I am.
-					// HateCrowded: I hate how crowded I am.
-					// LikeNPC_Princess: I like {NPCName}.
-					// Princess_LovesNPC: I like {NPCName}.
+					Content: Я счастлива! Мне нравится быть здесь. Тут так уютненько)
+					NoHome: Я бы хотела чтобы у меня был дом :(
+					FarFromHome: Я слишком далеко от дома. Это меня расстраивает :(
+					LoveSpace: Я люблю когда мало людей вокруг, не люблю лишние взгляды)
+					DislikeCrowded: Мне не нравится шум вокруг!
+					HateCrowded: Я ненавижу всех этих людей вокруг!!!
+					LikeNPC_Princess: Мне нравится {NPCName}.
+					Princess_LovesNPC: Мне нравится {NPCName}.
+					LoveBiome: Я люблю {BiomeName}.
+					LikeBiome: Мне нравится {BiomeName}.
+					DislikeBiome: Мне не нравится {BiomeName}.
+					LoveNPC: Я люблю {NPCName}.
+					LikeNPC: Мне нравится {NPCName}.
+					DislikeNPC: Мне не нравится {NPCName}.
+					HateNPC: Я ненавижу {NPCName}.
 				}
 			}
 		}
@@ -44,6 +51,15 @@ Mods: {
 					Нажмите [KEY], чтобы телепортироваться в позицию мыши.
 					Телепортация невозможна, пока активно состояние хаоса
 					Работает, только если оно находится в слоте для аксессуаров!!!
+					'''
+			}
+
+			Carrot: {
+				DisplayName: Морковка
+				Tooltip:
+					'''
+					{$CommonItemTooltip.MediumStats}
+					«А потом резать морковку, а потом...»
 					'''
 			}
 		}
