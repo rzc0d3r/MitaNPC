@@ -12,7 +12,7 @@ namespace MitaNPC.Items.Potions
             Item.width = 64;
             Item.height = 60;
             Item.useTurn = true;
-            Item.maxStack = 9999;
+            Item.maxStack = Item.CommonMaxStack;
             Item.useAnimation = 50;
             Item.useTime = 50;
             Item.useStyle = ItemUseStyleID.EatFood;

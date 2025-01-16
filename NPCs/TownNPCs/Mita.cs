@@ -4,7 +4,10 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.Utilities;
+using Terraria.GameContent;
 using Terraria.GameContent.Personalities;
+
+using ReLogic.Content;
 
 using System;
 using Microsoft.Xna.Framework.Graphics;
@@ -13,7 +16,8 @@ using Microsoft.Xna.Framework;
 using MitaNPC.Items.Armor.Vanity;
 using MitaNPC.Items.Accessories;
 using MitaNPC.Items.Potions;
-
+using MitaNPC.Items.Consumables;
+using Terraria.ModLoader.IO;
 
 namespace MitaNPC.NPCs.TownNPCs
 {
@@ -21,6 +25,7 @@ namespace MitaNPC.NPCs.TownNPCs
     public class Mita : ModNPC
     {
         public const string Shop1 = "Shop 1";
+        public int MitaSkin = 1;
 
         public override void SetStaticDefaults()
         {
@@ -32,7 +37,7 @@ namespace MitaNPC.NPCs.TownNPCs
             NPCID.Sets.AttackType[Type] = 3; // The type of attack the Town NPC performs. 0 = throwing, 1 = shooting, 2 = magic, 3 = melee
             NPCID.Sets.AttackTime[Type] = 10; // The amount of time it takes for the NPC's attack animation to be over once it starts. Measured in ticks. There are 60 ticks per second, so an amount of 90 will take 1.5 seconds.
             NPCID.Sets.AttackAverageChance[Type] = 1; // The denominator for the chance for a Town NPC to attack. Lower numbers make the Town NPC appear more aggressive.
-            NPCID.Sets.HatOffsetY[Type] = 4; // For when a party is active, the party hat spawns at a Y offset. Adjust this number to change where on your NPC's head the party hat sits.
+            //NPCID.Sets.HatOffsetY[Type] = 4; // For when a party is active, the party hat spawns at a Y offset. Adjust this number to change where on your NPC's head the party hat sits.
             NPC.Happiness
                 .SetBiomeAffection<UndergroundBiome>(AffectionLevel.Love)
                 .SetBiomeAffection<ForestBiome>(AffectionLevel.Like)
@@ -70,7 +75,6 @@ namespace MitaNPC.NPCs.TownNPCs
             NPC.HitSound = SoundID.NPCHit1; // The sound that is played when the NPC takes damage.
             NPC.DeathSound = SoundID.NPCDeath1; // The sound that is played with the NPC dies.
             NPC.knockBackResist = 0.5f; // All vanilla Town NPCs have 50% knockback resistance. Think of this more as knockback susceptibility. 1f = 100% knockback taken, 0f = 0% knockback taken.
-
             AnimationType = NPCID.Mechanic; // Sets the animation style to follow the animation of your chosen vanilla Town NPC.
         }
 
@@ -163,9 +167,12 @@ namespace MitaNPC.NPCs.TownNPCs
         {
             NPCShop npcShop = new NPCShop(Type, Shop1);
             npcShop.Add(ModContent.ItemType<MitasCap>());
-            npcShop.Add(ModContent.ItemType<TravelRing>());
+            npcShop.Add(ModContent.ItemType<TravelRing>(), [Condition.Hardmode, Condition.DownedMechBossAll]);
             npcShop.Add(ModContent.ItemType<Carrot>());
-            npcShop.Add(new Item(ItemID.PsychoKnife) { shopCustomPrice = Item.buyPrice(2, 50, 0, 0) }, Condition.BloodMoon);
+            npcShop.Add(ModContent.ItemType<MitaDefaultActivator>());
+            npcShop.Add(ModContent.ItemType<MitaCappieActivator>());
+            npcShop.Add(ModContent.ItemType<MitaMilaActivator>());
+            npcShop.Add(new Item(ItemID.PsychoKnife) { shopCustomPrice = Item.buyPrice(2, 50, 0, 0) }, [Condition.Hardmode, Condition.BloodMoon]);
             npcShop.Register();
         }
 
@@ -219,6 +226,34 @@ namespace MitaNPC.NPCs.TownNPCs
         {
             damage = 30;
             knockback = 4f;
+        }
+
+        public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+        {
+            if (Main.dedServ)
+                return false;
+
+            SpriteEffects sprite_effects = NPC.direction == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
+            Texture2D NPCTexture = TextureAssets.Npc[NPC.type].Value;
+
+            if (MitaSkin == 2)
+                NPCTexture = ModContent.Request<Texture2D>(Texture + "_Cappie", AssetRequestMode.AsyncLoad).Value;
+            else if (MitaSkin == 3)
+                NPCTexture = ModContent.Request<Texture2D>(Texture + "_Mila", AssetRequestMode.AsyncLoad).Value;
+
+            spriteBatch.Draw(NPCTexture, NPC.Center - screenPos + new Vector2(0, NPC.gfxOffY) - new Vector2(0f, 6f), NPC.frame, drawColor, NPC.rotation, NPC.frame.Size() / 2, NPC.scale, sprite_effects, 0);
+            return false;
+        }
+
+        public override void LoadData(TagCompound tag)
+        {
+            if (tag.ContainsKey("MitaSkin"))
+                MitaSkin = tag.GetInt("MitaSkin");
+        }
+
+        public override void SaveData(TagCompound tag)
+        {
+            tag["MitaSkin"] = MitaSkin;
         }
     }
 }

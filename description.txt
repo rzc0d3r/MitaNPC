@@ -1,11 +1,55 @@
+--- English ---
 Your personal Mita from MiSide in Terraria!!!
 
 Adds a new NPC named Mita from the MiSide game.
 Features 2 voice acting options: Russian and Japanese
 Realized 2 text language options: Russian and English
+Implemented 3 skins: standart Mita, Cappie (Cool Mita), Mila
 
 Shop:
 1. Mita's Cap
-2. Travel Ring (Analog of the Normality Relocator from Calamity, Default HotKey is Q)
+2. Travel Ring (Conditions of sale: World in Hardmode, all mechanical bosses defeated) - Analog of the Normality Relocator from Calamity, Default HotKey is Q
 3. Carrot (Consumable, Medium improvements to all stats - 3m)
-4. Psycho Knife (during Blood Moon)
+4. Psycho Knife (Conditions of sale: World in hardmode, during Blood Moon)
+5. Standart Mita Activator (change of skin)
+6. Cappie Activator (change of skin)
+7. Mila Activator (change of skin)
+
+Happiness conditions:
+ - Biomes:
+   Loves: Underground
+   Likes: Forest
+   Dislikes: Hallow biome and Jungle
+ - NPCs:
+   Loves: Angler
+   Likes: Arms Dealer, Painter, Demolitionist
+   Dislikes: Truffle
+   Hates: All female NPCs (Nurse, Zoologist, Dryad, Stylist, Mechanic, Party Girl, Steampunker, Princess)
+
+--- Русский ---
+Ваша личная Мита из MiSide в Terraria!!!
+
+Добавляет нового NPC по имени Мита из игры MiSide.
+Имеет 2 варианта озвучки: Русский и Японский
+Реализовано 2 варианта языка текста: Русский и Английский
+Реализовано 3 скина: обычная Мита, Кепочка (Крутая Мита), Мила
+
+Магазин:
+1. Кепочка Миты
+2. Кольцо путешественника (Условия продажи: Мир в Хардмоде, Побеждены все механические боссы) - Аналог Релокатора нормальной формы из Calamity, Горячая клавиша по умолчанию - Q
+3. Морковка (Расходуется, Умеренно повышает все характеристики - 3 минуты)
+4. Нож психа (Условия продажи: Мир в Хардмоде, во время Кровавой Луны)
+5. Активатор обычной Миты (смена скина)
+6. Активатор Кепочки (смена скина)
+7. Активатор Милы (смена скина)
+
+Условия Счастья:
+ - Биомы:
+   Любит: Подземелье
+   Нравится: Лес
+   Не нравится: Святой биом и Джунгли
+ - NPCs:
+   Любит: Рыбака
+   Нравится: Оружейник, Маляр, Подрывник
+   Не нравится: Трюфель
+   Ненавидит: Всех женских НПС (Медсестру, Зоолога, Дриаду, Стилиста, Механика, Тусовщицу, Стимпанкера, Принцессу)

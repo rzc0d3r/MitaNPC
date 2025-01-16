@@ -62,6 +62,33 @@ Mods: {
 					'And then cut carrots, and then...'
 					'''
 			}
+
+			MitaCappieActivator: {
+				DisplayName: Cappie Activator (change of skin)
+				Tooltip:
+					'''
+					Turns the current Mita into a Cappie (Cool Mita)
+					Only consumable if Mita is in your world!
+					'''
+			}
+
+			MitaDefaultActivator: {
+				DisplayName: Standart Mita Activator (change of skin)
+				Tooltip:
+					'''
+					Turns the current Mita into a standart Mita
+					Only consumed if the Mita is in your world!
+					'''
+			}
+
+			MitaMilaActivator: {
+				DisplayName: Mila Activator (change of skin)
+				Tooltip:
+					'''
+					Turns the current Mita into Mila
+					Only consumable if Mita is in your world!
+					'''
+			}
 		}
 
 		Keybinds.TravelRingHotKey.DisplayName: Travel Ring

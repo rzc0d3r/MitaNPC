@@ -11,6 +11,8 @@
 	  <None Remove="Items\Accessories\TravelRing.png" />
 	  <None Remove="Items\Armor\Vanity\MitasCap.png" />
 	  <None Remove="Items\Armor\Vanity\MitasCap_Head.png" />
+	  <None Remove="Items\Consumables\MitaDefaultActivator.png" />
+	  <None Remove="Items\Consumables\MitaMilaActivator.png" />
 	  <None Remove="Localization\ru-RU.hjson" />
 	  <None Remove="NPCs\TownNPCs\Mita.png" />
 	  <None Remove="NPCs\TownNPCs\Mita2.png" />

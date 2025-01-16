@@ -12,7 +12,7 @@ namespace MitaNPC.Items.Accessories
 {
     public class TravelRing : ModItem
     {
-        float moveSpeedBonus = 0.2f;
+        float moveSpeedBonus = 0.1f;
         public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs((int)(moveSpeedBonus*100));
         
         public override void SetStaticDefaults()
