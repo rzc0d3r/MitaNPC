@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace MitaNPC.Items.Potions
 {
-    public class Carrot : ModItem
+    public class Carrot: ModItem
     {
         public override void SetDefaults()
         {

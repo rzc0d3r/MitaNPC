@@ -1,31 +1,37 @@
 ﻿using Terraria;
-using Terraria.Audio;
 using Terraria.ID;
-using Terraria.Localization;
-using Terraria.ModLoader;
+using Terraria.Audio;
 using Terraria.Utilities;
+using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
 using Terraria.GameContent;
+using Terraria.Localization;
 using Terraria.GameContent.Personalities;
 
 using ReLogic.Content;
 
 using System;
-using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
-using MitaNPC.Items.Armor.Vanity;
-using MitaNPC.Items.Accessories;
 using MitaNPC.Items.Potions;
+using MitaNPC.Items.Accessories;
 using MitaNPC.Items.Consumables;
-using Terraria.ModLoader.IO;
+using MitaNPC.Items.Armor.Vanity;
+using MitaNPC.Items.PermanentBoosters;
 
 namespace MitaNPC.NPCs.TownNPCs
 {
     [AutoloadHead]
     public class Mita : ModNPC
     {
-        public const string Shop1 = "Shop 1";
         public int MitaSkin = 1;
+        public const string StandartMitaShop = "Standart Mita Shop";
+        public const string MitaCappieShop = "Mita Cappie Shop";
+        public const string MilaShop = "Mila Shop";
+        public const int StandartMilaSkin = 1;
+        public const int MitaCappieSkin = 2;
+        public const int MilaSkin = 3;
 
         public override void SetStaticDefaults()
         {
@@ -87,41 +93,112 @@ namespace MitaNPC.NPCs.TownNPCs
         {
             WeightedRandom<string> chat = new();
 
-            string greeting1 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.Dialogue.Greeting1", Main.LocalPlayer.name);
-            string greeting2 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.Dialogue.Greeting2");
-            string nightPhrase1 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.Dialogue.NightPhrase1");
-            string nightPhrase2 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.Dialogue.NightPhrase2");
-            string nightPhrase3 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.Dialogue.NightPhrase3");
-            string nightPhrase4 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.Dialogue.NightPhrase4");
-            string nightPhrase5 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.Dialogue.NightPhrase5");
-            string nightPhrase6 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.Dialogue.NightPhrase6");
-            string nightPhrase7 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.Dialogue.NightPhrase7");
-            string youUsingDigitsInName = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.Dialogue.YouUsingDigitsInName");
+            string greeting1 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.StandartMitaDialogue.Greeting1", Main.LocalPlayer.name);
+            string greeting2 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.StandartMitaDialogue.Greeting2");
+            string nightPhrase1 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.StandartMitaDialogue.NightPhrase1");
+            string nightPhrase2 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.StandartMitaDialogue.NightPhrase2");
+            string nightPhrase3 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.StandartMitaDialogue.NightPhrase3");
+            string nightPhrase4 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.StandartMitaDialogue.NightPhrase4");
+            string nightPhrase5 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.StandartMitaDialogue.NightPhrase5");
+            string nightPhrase6 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.StandartMitaDialogue.NightPhrase6");
+            string nightPhrase7 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.StandartMitaDialogue.NightPhrase7");
+            string youUsingDigitsInName = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.StandartMitaDialogue.YouUsingDigitsInName");
 
-            if (Main.IsItDay()) // Daytime chat
+            string mitaCappie_greeting1 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MitaCappieDialogue.Greeting1");
+            string mitaCappie_greeting2 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MitaCappieDialogue.Greeting2");
+            string mitaCappie_phrase1 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MitaCappieDialogue.Phrase1");
+            string mitaCappie_phrase2 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MitaCappieDialogue.Phrase2");
+            string mitaCappie_phrase3 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MitaCappieDialogue.Phrase3");
+            string mitaCappie_phrase4 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MitaCappieDialogue.Phrase4");
+            string mitaCappie_phrase5 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MitaCappieDialogue.Phrase5");
+
+            string mila_greeting1 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Greeting1");
+            string mila_greeting2 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Greeting2");
+            string mila_greeting3 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Greeting3");
+            string mila_greeting4 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Greeting4");
+            string mila_phrase1 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase1");
+            string mila_phrase2 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase2");
+            string mila_phrase3 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase3");
+            string mila_phrase4 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase4");
+            string mila_phrase5 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase5");
+            string mila_phrase6 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase6");
+            string mila_phrase7 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase7");
+            string mila_phrase8 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase8");
+            string mila_phrase9 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase9");
+            string mila_phrase10 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase10");
+            string mila_phrase11 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase11");
+            string mila_phrase12 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase12");
+            string mila_phrase13 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase13");
+            string mila_phrase14 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase14");
+            string mila_phrase15 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase15");
+            string mila_phrase16 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase16");
+            string mila_phrase17 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase17");
+            string mila_phrase18 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase18");
+            string mila_phrase19 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase19");
+            string mila_phrase20 = Language.GetTextValue("Mods.MitaNPC.NPCs.Mita.MilaDialogue.Phrase20");
+
+            if (MitaSkin <= 1)
             {
-                chat.Add(greeting1);
-                chat.Add(greeting2);
-                foreach (char ch in Main.LocalPlayer.name)
+                if (Main.IsItDay()) // Daytime chat
                 {
-                    if (Char.IsDigit(ch))
+                    chat.Add(greeting1);
+                    chat.Add(greeting2);
+                    foreach (char ch in Main.LocalPlayer.name)
                     {
-                        chat.Add(youUsingDigitsInName);
-                        break;
+                        if (Char.IsDigit(ch))
+                        {
+                            chat.Add(youUsingDigitsInName);
+                            break;
+                        }
                     }
                 }
+                else // Night-time chat
+                {
+                    chat.Add(nightPhrase1);
+                    chat.Add(nightPhrase2);
+                    chat.Add(nightPhrase3);
+                    chat.Add(nightPhrase4);
+                    chat.Add(nightPhrase5);
+                    chat.Add(nightPhrase6);
+                    chat.Add(nightPhrase7);
+                }
             }
-            else // Night-time chat
+            else if (MitaSkin == 2)
             {
-                chat.Add(nightPhrase1);
-                chat.Add(nightPhrase2);
-                chat.Add(nightPhrase3);
-                chat.Add(nightPhrase4);
-                chat.Add(nightPhrase5);
-                chat.Add(nightPhrase6);
-                chat.Add(nightPhrase7);
+                chat.Add(mitaCappie_greeting1);
+                chat.Add(mitaCappie_greeting2);
+                chat.Add(mitaCappie_phrase1);
+                chat.Add(mitaCappie_phrase2);
+                chat.Add(mitaCappie_phrase3);
+                chat.Add(mitaCappie_phrase4);
             }
-
+            else if (MitaSkin == 3)
+            {
+                chat.Add(mila_greeting1);
+                chat.Add(mila_greeting2);
+                chat.Add(mila_greeting3);
+                chat.Add(mila_greeting4);
+                chat.Add(mila_phrase1);
+                chat.Add(mila_phrase2);
+                chat.Add(mila_phrase3);
+                chat.Add(mila_phrase4);
+                chat.Add(mila_phrase5);
+                chat.Add(mila_phrase6);
+                chat.Add(mila_phrase7);
+                chat.Add(mila_phrase8);
+                chat.Add(mila_phrase9);
+                chat.Add(mila_phrase10);
+                chat.Add(mila_phrase11);
+                chat.Add(mila_phrase12);
+                chat.Add(mila_phrase13);
+                chat.Add(mila_phrase14);
+                chat.Add(mila_phrase15);
+                chat.Add(mila_phrase16);
+                chat.Add(mila_phrase17);
+                chat.Add(mila_phrase18);
+                chat.Add(mila_phrase19);
+                chat.Add(mila_phrase20);
+            }
             string pathToSound = "MitaNPC/Sounds/Mita/";
             if (Language.ActiveCulture.Name == "ru-RU")
                 pathToSound += "Russian";
@@ -129,6 +206,7 @@ namespace MitaNPC.NPCs.TownNPCs
                 pathToSound += "Japanese";
 
             string phrase = chat.Get();
+            // MitaSkin == 1 (Standart Mita)
             if (phrase == greeting1)
                 SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location1/12"));
             else if (phrase == greeting2)
@@ -149,6 +227,72 @@ namespace MitaNPC.NPCs.TownNPCs
                 SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location17/154"));
             else if (phrase == nightPhrase7)
                 SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location17/157"));
+
+            // MitaSkin == 2 (Cappie - Cool Mita)
+            if (phrase == mitaCappie_greeting1)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location7/140"));
+            else if (phrase == mitaCappie_greeting2)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location7/317"));
+            else if (phrase == mitaCappie_phrase1)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location7/368"));
+            else if (phrase == mitaCappie_phrase2)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location7/427"));
+            else if (phrase == mitaCappie_phrase3)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location7/459"));
+            else if (phrase == mitaCappie_phrase4)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location7/482"));
+            else if (phrase == mitaCappie_phrase5)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location7/507"));
+
+            // MitaSkin == 3 (Mila)
+            if (phrase == mila_greeting1)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/43"));
+            else if (phrase == mila_greeting2)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/139"));
+            else if (phrase == mila_greeting3)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/318"));
+            else if (phrase == mila_greeting4)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/592"));
+            else if (phrase == mila_phrase1)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/92"));
+            else if (phrase == mila_phrase2)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/102"));
+            else if (phrase == mila_phrase3)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/122"));
+            else if (phrase == mila_phrase4)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/174"));
+            else if (phrase == mila_phrase5)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/233"));
+            else if (phrase == mila_phrase6)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/234"));
+            else if (phrase == mila_phrase7)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/252"));
+            else if (phrase == mila_phrase8)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/253"));
+            else if (phrase == mila_phrase9)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/352"));
+            else if (phrase == mila_phrase10)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/357"));
+            else if (phrase == mila_phrase11)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/358"));
+            else if (phrase == mila_phrase12)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/363"));
+            else if (phrase == mila_phrase13)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/366"));
+            else if (phrase == mila_phrase14)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/404"));
+            else if (phrase == mila_phrase15)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/405"));
+            else if (phrase == mila_phrase16)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/410"));
+            else if (phrase == mila_phrase17)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/423+424"));
+            else if (phrase == mila_phrase18)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/493"));
+            else if (phrase == mila_phrase19)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/534"));
+            else if (phrase == mila_phrase20)
+                SoundEngine.PlaySound(new SoundStyle(pathToSound + "/Location19/576"));
             return phrase;
         }
 
@@ -160,20 +304,42 @@ namespace MitaNPC.NPCs.TownNPCs
         public override void OnChatButtonClicked(bool firstButton, ref string shopName)
         {
             if (firstButton)
-                shopName = Shop1;
+            {
+                shopName = StandartMitaShop;
+                if (MitaSkin == MitaCappieSkin)
+                    shopName = MitaCappieShop;
+                else if (MitaSkin == MilaSkin)
+                    shopName = MilaShop;
+            }
         }
 
         public override void AddShops()
         {
-            NPCShop npcShop = new NPCShop(Type, Shop1);
-            npcShop.Add(ModContent.ItemType<MitasCap>());
-            npcShop.Add(ModContent.ItemType<TravelRing>(), [Condition.Hardmode, Condition.DownedMechBossAll]);
-            npcShop.Add(ModContent.ItemType<Carrot>());
-            npcShop.Add(ModContent.ItemType<MitaDefaultActivator>());
-            npcShop.Add(ModContent.ItemType<MitaCappieActivator>());
-            npcShop.Add(ModContent.ItemType<MitaMilaActivator>());
-            npcShop.Add(new Item(ItemID.PsychoKnife) { shopCustomPrice = Item.buyPrice(2, 50, 0, 0) }, [Condition.Hardmode, Condition.BloodMoon]);
-            npcShop.Register();
+            NPCShop mitaStandart_Shop = new NPCShop(Type, StandartMitaShop);
+            mitaStandart_Shop.Add(ModContent.ItemType<MitaDefaultActivator>())
+            .Add(ModContent.ItemType<MitaCappieActivator>())
+            .Add(ModContent.ItemType<MitaMilaActivator>())
+            .Add(ModContent.ItemType<Carrot>())
+            .Add(ModContent.ItemType<TravelRing>(), Condition.Hardmode, Condition.DownedMechBossAll)
+            .Add(new Item(ItemID.PsychoKnife) { shopCustomPrice = Item.buyPrice(2, 50, 0, 0) }, Condition.Hardmode, Condition.BloodMoon)
+            .Register();
+
+            NPCShop mitaCappie_Shop = new NPCShop(Type, MitaCappieShop);
+            mitaCappie_Shop.Add(ModContent.ItemType<MitaDefaultActivator>())
+            .Add(ModContent.ItemType<MitaCappieActivator>())
+            .Add(ModContent.ItemType<MitaMilaActivator>())
+            .Add(ModContent.ItemType<MitasCap>())
+            .Register();
+
+            NPCShop mila_Shop = new NPCShop(Type, MilaShop);
+            mila_Shop.Add(ModContent.ItemType<MitaDefaultActivator>())
+            .Add(ModContent.ItemType<MitaCappieActivator>())
+            .Add(ModContent.ItemType<MitaMilaActivator>())
+            .Add(ModContent.ItemType<MartialArtsManual>())
+            .Add(ModContent.ItemType<ShootersManual>())
+            .Add(ModContent.ItemType<PokemonManual>())
+            .Add(ModContent.ItemType<MagiciansManual>())
+            .Register();
         }
 
         public override void TownNPCAttackSwing(ref int itemWidth, ref int itemHeight)
@@ -236,9 +402,9 @@ namespace MitaNPC.NPCs.TownNPCs
             SpriteEffects sprite_effects = NPC.direction == -1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
             Texture2D NPCTexture = TextureAssets.Npc[NPC.type].Value;
 
-            if (MitaSkin == 2)
+            if (MitaSkin == MitaCappieSkin)
                 NPCTexture = ModContent.Request<Texture2D>(Texture + "_Cappie", AssetRequestMode.AsyncLoad).Value;
-            else if (MitaSkin == 3)
+            else if (MitaSkin == MilaSkin)
                 NPCTexture = ModContent.Request<Texture2D>(Texture + "_Mila", AssetRequestMode.AsyncLoad).Value;
 
             spriteBatch.Draw(NPCTexture, NPC.Center - screenPos + new Vector2(0, NPC.gfxOffY) - new Vector2(0f, 6f), NPC.frame, drawColor, NPC.rotation, NPC.frame.Size() / 2, NPC.scale, sprite_effects, 0);

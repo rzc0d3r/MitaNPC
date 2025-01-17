@@ -6,14 +6,28 @@ Features 2 voice acting options: Russian and Japanese
 Realized 2 text language options: Russian and English
 Implemented 3 skins: standart Mita, Cappie (Cool Mita), Mila
 
-Shop:
-1. Mita's Cap
-2. Travel Ring (Conditions of sale: World in Hardmode, all mechanical bosses defeated) - Analog of the Normality Relocator from Calamity, Default HotKey is Q
-3. Carrot (Consumable, Medium improvements to all stats - 3m)
-4. Psycho Knife (Conditions of sale: World in hardmode, during Blood Moon)
-5. Standart Mita Activator (change of skin)
-6. Cappie Activator (change of skin)
-7. Mila Activator (change of skin)
+Shop (skin - standart Mita):
+1. Game Cartridge (change of skin)
+2. Cappie Activator (change of skin)
+3. Mila's Book (change of skin)
+4. Carrot
+5. Travel Ring (Conditions of sale: World in Hardmode, all mechanical bosses defeated) - Analog of the Normality Relocator from Calamity, Default HotKey is Q
+6. Psycho Knife (Conditions of sale: World in hardmode, during Blood Moon)
+
+Shop (skin - Cappie):
+1. Game Cartridge (change of skin)
+2. Cappie Activator (change of skin)
+3. Mila's Book (change of skin)
+4. Mita's Cap
+
+Shop (skin - Mila):
+1. Game Cartridge (change of skin)
+2. Cappie Activator (change of skin)
+3. Mila's Book (change of skin)
+4. Martial Arts Manual
+5. Shooters Manual
+6. Magicians Manual
+7. Pokemon Manual
 
 Happiness conditions:
  - Biomes:
@@ -34,14 +48,28 @@ Happiness conditions:
 Реализовано 2 варианта языка текста: Русский и Английский
 Реализовано 3 скина: обычная Мита, Кепочка (Крутая Мита), Мила
 
-Магазин:
-1. Кепочка Миты
-2. Кольцо путешественника (Условия продажи: Мир в Хардмоде, Побеждены все механические боссы) - Аналог Релокатора нормальной формы из Calamity, Горячая клавиша по умолчанию - Q
-3. Морковка (Расходуется, Умеренно повышает все характеристики - 3 минуты)
-4. Нож психа (Условия продажи: Мир в Хардмоде, во время Кровавой Луны)
-5. Активатор обычной Миты (смена скина)
-6. Активатор Кепочки (смена скина)
-7. Активатор Милы (смена скина)
+Магазин (скин - обычная Мита):
+1. Игровой картридж (смена скина)
+2. Активатор Кепочки (смена скина)
+3. Книга Милы (смена скина)
+4. Морковка
+5. Кольцо путешественника (Условия продажи: Мир в Хардмоде, Побеждены все механические боссы) - Аналог Релокатора нормальной формы из Calamity, Горячая клавиша по умолчанию - Q
+6. Нож психа (Условия продажи: Мир в Хардмоде, во время Кровавой Луны)
+
+Магазин (скин - Кепочка):
+1. Игровой картридж (смена скина)
+2. Активатор Кепочки (смена скина)
+3. Книга Милы (смена скина)
+4. Кепочка Миты
+
+Магазин (скин - Мила):
+1. Игровой картридж (смена скина)
+2. Активатор Кепочки (смена скина)
+3. Книга Милы (смена скина)
+4. Руководство по боевым искусствам (Постоянное усиление)
+5. Руководство для стрелка (Постоянное усиление)
+6. Руководство для мага (Постоянное усиление)
+7. Руководство по покемонам (Постоянное усиление)
 
 Условия Счастья:
  - Биомы:

@@ -4,7 +4,7 @@ Mods: {
 			Mita: {
 				DisplayName: Mita
 
-				Dialogue: {
+				StandartMitaDialogue: {
 					Greeting1: Nice to meet you, {0}!
 					Greeting2: Hi! I'm Mita!
 					NightPhrase1: Who are yooouuu?
@@ -15,6 +15,43 @@ Mods: {
 					NightPhrase6: What?
 					NightPhrase7: I'm totally fine...
 					YouUsingDigitsInName: Oh, so you're going with numbers? Where's the creativity in that?
+				}
+
+				MitaCappieDialogue: {
+					Greeting1: Salute!
+					Greeting2: I'm Mita!
+					Phrase1: Oops!
+					Phrase2: Oh, you!
+					Phrase3: Whoo-hoo!
+					Phrase4: Tsk, tsk, tsk!
+					Phrase5: That's some shaking you've got there!
+				}
+
+				MilaDialogue: {
+					Greeting1: I'm Mila.
+					Greeting2: What do you want?
+					Greeting3: I'm Mila, got it! Not like the rest.
+					Greeting4: I'm Mila, that's it!
+					Phrase1: You know if my house blows up, you're dead too!
+					Phrase2: Don't piss me off!
+					Phrase3: Yeah...
+					Phrase4: Fear me!
+					Phrase5: Ouch!
+					Phrase6: Ohh!
+					Phrase7: Oh!
+					Phrase8: Sorry, I didn't mean to.
+					Phrase9: Why are you staring?
+					Phrase10: Don't look at me for so long!
+					Phrase11: Dummy...
+					Phrase12: It's rude to look in a girl's direction!
+					Phrase13: Shoo!
+					Phrase14: Why aren't we talking?
+					Phrase15: Cat got your tongue?
+					Phrase16: I'm swearing off carrots!
+					Phrase17: I don't like fetishists! Carrot lovers, lovers of lewd things...
+					Phrase18: Just keep your face simple.
+					Phrase19: Ugh, I am so sick of that carrot!
+					Phrase20: Ah, you're back again!
 				}
 
 				TownNPCMood: {
@@ -73,7 +110,7 @@ Mods: {
 			}
 
 			MitaDefaultActivator: {
-				DisplayName: Standart Mita Activator (change of skin)
+				DisplayName: Game Cartridge (change of skin)
 				Tooltip:
 					'''
 					Turns the current Mita into a standart Mita
@@ -82,11 +119,47 @@ Mods: {
 			}
 
 			MitaMilaActivator: {
-				DisplayName: Mila Activator (change of skin)
+				DisplayName: Mila's Book (change of skin)
 				Tooltip:
 					'''
 					Turns the current Mita into Mila
 					Only consumable if Mita is in your world!
+					'''
+			}
+
+			MartialArtsManual: {
+				DisplayName: Martial Arts Manual (Permanent Boosters)
+				Tooltip:
+					'''
+					{$CommonItemTooltip.PercentIncreasedMeleeDamage}
+					Permanent Boosters
+					'''
+			}
+
+			ShootersManual: {
+				DisplayName: Shooters Manual (Permanent Boosters)
+				Tooltip:
+					'''
+					{$CommonItemTooltip.PercentIncreasedRangedDamage}
+					Permanent Boosters
+					'''
+			}
+
+			MagiciansManual: {
+				DisplayName: Magicians Manual (Permanent Boosters)
+				Tooltip:
+					'''
+					{$CommonItemTooltip.PercentIncreasedMagicDamage}
+					Permanent Boosters
+					'''
+			}
+
+			PokemonManual: {
+				DisplayName: Pokemon Manual (Permanent Boosters)
+				Tooltip:
+					'''
+					{$CommonItemTooltip.PercentIncreasedSummonDamage}
+					Permanent Boosters
 					'''
 			}
 		}

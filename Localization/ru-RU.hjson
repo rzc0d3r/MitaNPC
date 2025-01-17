@@ -4,7 +4,7 @@ Mods: {
 			Mita: {
 				DisplayName: Мита
 
-				Dialogue: {
+				StandartMitaDialogue: {
 					Greeting1: Рада знакомству, {0}!
 					Greeting2: Привет! Я Мита!
 					NightPhrase1: Ты кто-о?
@@ -15,6 +15,43 @@ Mods: {
 					NightPhrase6: Чего?
 					NightPhrase7: Я в полном порядке...
 					YouUsingDigitsInName: Эй, ты используешь числа в имени? У тебя совсем не хватает фантазии
+				}
+
+				MitaCappieDialogue: {
+					Greeting1: Салют!
+					Greeting2: Я Мита!
+					Phrase1: О-ой!
+					Phrase2: Ах, Ты!
+					Phrase3: Уху-у-у!
+					Phrase4: Тыц-тыц-тыц!
+					Phrase5: Вот это тряска у тебя!
+				}
+
+				MilaDialogue: {
+					Greeting1: Я Мила.
+					Greeting2: Чего тебе?
+					Greeting3: Вообще-то, я Мила. Не как прочие.
+					Greeting4: Я мила и точка!
+					Phrase1: Знай, если мой дом взорвётся - ты труп!
+					Phrase2: Не зли меня!
+					Phrase3: Ага...
+					Phrase4: Бойся меня!
+					Phrase5: Ай!
+					Phrase6: О-oх!
+					Phrase7: Ой.
+					Phrase8: Ты прости, я не хотела...
+					Phrase9: Ну и чего пялишься
+					Phrase10: Не смотри на меня так долго!
+					Phrase11: Дурак...
+					Phrase12: Это не культурно - смотреть в сторону девушки!
+					Phrase13: Отстань!
+					Phrase14: Чего молчим?
+					Phrase15: Язык проглотил?
+					Phrase16: Решительно отказываюсь от моркови?
+					Phrase17: Знаешь, я фетишистов недолюбливаю! Любителей моркови, всяких развратных штучек...
+					Phrase18: Сделай лицо попроще.
+					Phrase19: Эта морковка меня задолбала!
+					Phrase20: О, вернулся!
 				}
 
 				TownNPCMood: {
@@ -73,7 +110,7 @@ Mods: {
 			}
 
 			MitaDefaultActivator: {
-				DisplayName: Активатор обычной Миты (смена скина)
+				DisplayName: Игровой картридж (смена скина)
 				Tooltip:
 					'''
 					Превращает текущую Миту в обычную Миту
@@ -82,11 +119,47 @@ Mods: {
 			}
 
 			MitaMilaActivator: {
-				DisplayName: Активатор Милы (смена скина)
+				DisplayName: Книга Милы (смена скина)
 				Tooltip:
 					'''
 					Превращает текущую Миту в Милу
 					Расходуется только если Мита находится в вашем мире!!!
+					'''
+			}
+
+			MartialArtsManual: {
+				DisplayName: Руководство по боевым искусствам
+				Tooltip:
+					'''
+					{$CommonItemTooltip.PercentIncreasedMeleeDamage}
+					Постоянное усиление
+					'''
+			}
+
+			ShootersManual: {
+				DisplayName: Руководство для стрелка
+				Tooltip:
+					'''
+					{$CommonItemTooltip.PercentIncreasedRangedDamage}
+					Постоянное усиление
+					'''
+			}
+
+			MagiciansManual: {
+				DisplayName: Руководство для мага
+				Tooltip:
+					'''
+					{$CommonItemTooltip.PercentIncreasedMagicDamage}
+					Постоянное усиление
+					'''
+			}
+
+			PokemonManual: {
+				DisplayName: Руководство по покемонам
+				Tooltip:
+					'''
+					{$CommonItemTooltip.PercentIncreasedSummonDamage}
+					Постоянное усиление
 					'''
 			}
 		}

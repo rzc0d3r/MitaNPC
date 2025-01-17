@@ -23,7 +23,7 @@ namespace MitaNPC.Items.Consumables
             Item.maxStack = Item.CommonMaxStack;
             Item.useAnimation = 50;
             Item.useTime = 50;
-            Item.useStyle = ItemUseStyleID.EatFood;
+            Item.useStyle = ItemUseStyleID.HoldUp;
             Item.UseSound = SoundID.Item92;
             Item.consumable = true;
 
@@ -68,6 +68,13 @@ namespace MitaNPC.Items.Consumables
     public class MitaDefaultActivator : MitaActivatorBase
     {
         MitaDefaultActivator() : base(1) { }
+
+        public override void SetDefaults()
+        {
+            base.SetDefaults();
+            Item.width = 24;
+            Item.height = 16;
+        }
     }
 
     public class MitaCappieActivator : MitaActivatorBase
@@ -78,5 +85,11 @@ namespace MitaNPC.Items.Consumables
     public class MitaMilaActivator : MitaActivatorBase
     {
         MitaMilaActivator() : base(3) { }
+        public override void SetDefaults()
+        {
+            base.SetDefaults();
+            Item.width = 24;
+            Item.height = 16;
+        }
     }
 }
