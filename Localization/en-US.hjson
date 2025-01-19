@@ -3,6 +3,12 @@ Mods: {
 		NPCs: {
 			Mita: {
 				DisplayName: Mita
+				BestiaryDescription:
+					'''
+					Presented as a charming and seemingly innocent girl, Mita is the main character in MiSide.
+					However, beneath her sweet and kind exterior lies a dark secret....
+					Mita hides this secret in order to maintain her friendship with the player while maintaining the illusion of innocence.
+					'''
 
 				StandartMitaDialogue: {
 					Greeting1: Nice to meet you, {0}!
@@ -64,6 +70,47 @@ Mods: {
 					LikeNPC_Princess: I like {NPCName}.
 					Princess_LovesNPC: I like {NPCName}.
 					LoveBiome: I like {BiomeName}.
+					LikeBiome: I like {BiomeName}.
+					DislikeBiome: I don't like {BiomeName}.
+					LoveNPC: I like {NPCName}.
+					LikeNPC: I like {NPCName}.
+					DislikeNPC: I don't like {NPCName}.
+					HateNPC: I hate {NPCName}.
+				}
+			}
+
+			MiSidePlayer: {
+				DisplayName: Player (MiSide)
+				BestiaryDescription:
+					'''
+					Morally exhausted, reserved and introspective, which prevents him from being openly cheerful.
+					He often doubts his own words and decisions, but this insecurity is balanced by a quiet determination.
+					'''
+				Phrase1: Hmmm....
+				Phrase2: Where am I?
+				Phrase3: My heart is pounding and my eyes are blurry.
+				Phrase4: I sit at the computer a lot...... I'm working.
+				Phrase5: I'm here all of a sudden..... I'm not ready for this.
+				Phrase6: I'm getting used to it.
+				Phrase7: Huh?
+				Phrase8: What is this place?
+				Phrase9: I've seen a lot of .... strange things.
+				Phrase10: Uh...
+				Phrase11: Hmm... What is this place?
+				Phrase12: I think I like this game.
+				Phrase13: I like kitties.
+				Phrase14: Uh-huh.
+
+				TownNPCMood: {
+					Content: I'm happy! I like being here. It's peaceful.
+					NoHome: I wish I had a home.
+					FarFromHome: I'm too far from home.
+					LoveSpace: I like having few people around.
+					DislikeCrowded: I don't like the noise around me!
+					HateCrowded: I hate those people around me!!!
+					LikeNPC_Princess: I like {NPCName}.
+					Princess_LovesNPC: I like {NPCName}.
+					LoveBiome: I love {BiomeName}.
 					LikeBiome: I like {BiomeName}.
 					DislikeBiome: I don't like {BiomeName}.
 					LoveNPC: I like {NPCName}.
@@ -162,8 +209,30 @@ Mods: {
 					Permanent Boosters
 					'''
 			}
+
+			GameConsole: {
+				DisplayName: Game Console
+				Tooltip: Summon the Fly from this game console that lights your way
+			}
+
+			Ramen: {
+				DisplayName: Ramen
+				Tooltip: "{$CommonItemTooltip.MajorStats}"
+			}
 		}
 
 		Keybinds.TravelRingHotKey.DisplayName: Travel Ring
+
+		Buffs: {
+			GameConsoleBuff: {
+				DisplayName: Fly
+				Description: The Fly follows you
+			}
+		}
+
+		Projectiles: {
+			ExamplePetProjectile.DisplayName: Example Pet Projectile
+			FlyPetProjectile.DisplayName: Fly Pet Projectile
+		}
 	}
 }

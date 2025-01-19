@@ -3,6 +3,12 @@ Mods: {
 		NPCs: {
 			Mita: {
 				DisplayName: Мита
+				BestiaryDescription:
+					'''
+					Представленная как очаровательная и, казалось бы, невинная девушка, Мита является главным персонажем в MiSide.
+					Однако под ее милой и доброй внешностью скрывается темная тайна...
+					Мита скрывает эту тайну, чтобы поддерживать дружбу с игроком, при этом сохраняя иллюзию невинности.
+					'''
 
 				StandartMitaDialogue: {
 					Greeting1: Рада знакомству, {0}!
@@ -61,6 +67,47 @@ Mods: {
 					LoveSpace: Я люблю когда мало людей вокруг, не люблю лишние взгляды)
 					DislikeCrowded: Мне не нравится шум вокруг!
 					HateCrowded: Я ненавижу всех этих людей вокруг!!!
+					LikeNPC_Princess: Мне нравится {NPCName}.
+					Princess_LovesNPC: Мне нравится {NPCName}.
+					LoveBiome: Я люблю {BiomeName}.
+					LikeBiome: Мне нравится {BiomeName}.
+					DislikeBiome: Мне не нравится {BiomeName}.
+					LoveNPC: Я люблю {NPCName}.
+					LikeNPC: Мне нравится {NPCName}.
+					DislikeNPC: Мне не нравится {NPCName}.
+					HateNPC: Я ненавижу {NPCName}.
+				}
+			}
+
+			MiSidePlayer: {
+				DisplayName: Игрок (MiSide)
+				BestiaryDescription:
+					'''
+					Морально измотан, сдержан и интроспективен, что не позволяет ему быть открыто веселым.
+					Он часто сомневается в своих собственных словах и решениях, но эта неуверенность в себе уравновешивается тихой решимостью.
+					'''
+				Phrase1: Хм-м...
+				Phrase2: Где я?
+				Phrase3: Сердце колит, в глазах шумит.
+				Phrase4: Я часто сижу за компьютером... Тружусь.
+				Phrase5: Я оказался здесь внезапно... И совсем не готов к этому.
+				Phrase6: Я уже будто начал привыкать.
+				Phrase7: А?
+				Phrase8: Что это за место?
+				Phrase9: Я успел повидать много... странного.
+				Phrase10: Э-э...
+				Phrase11: Хм... А что это за место?
+				Phrase12: Кажется, эта игра мне нравится.
+				Phrase13: Мне нравится котики.
+				Phrase14: Э-э-эх-х.
+
+				TownNPCMood: {
+					Content: Я счастлив! Мне нравится быть здесь. Тут спокойно.
+					NoHome: Я бы хотел чтобы у меня был дом.
+					FarFromHome: Я слишком далеко от дома.
+					LoveSpace: Мне нравится когда мало людей вокруг.
+					DislikeCrowded: Мне не нравится шум вокруг!
+					HateCrowded: Я ненавижу этих людей вокруг!!!
 					LikeNPC_Princess: Мне нравится {NPCName}.
 					Princess_LovesNPC: Мне нравится {NPCName}.
 					LoveBiome: Я люблю {BiomeName}.
@@ -162,8 +209,30 @@ Mods: {
 					Постоянное усиление
 					'''
 			}
+
+			GameConsole: {
+				DisplayName: Игровая консоль
+				Tooltip: Призывает Муху из этой игровой консоли, которая освещает вам путь
+			}
+
+			Ramen: {
+				DisplayName: Рамен
+				Tooltip: "{$CommonItemTooltip.MajorStats}"
+			}
 		}
 
 		Keybinds.TravelRingHotKey.DisplayName: Кольцо путешественника
+
+		Buffs: {
+			GameConsoleBuff: {
+				DisplayName: Муха
+				Description: За вами следует Муха
+			}
+		}
+
+		Projectiles: {
+			// ExamplePetProjectile.DisplayName: Example Pet Projectile
+			// FlyPetProjectile.DisplayName: Fly Pet Projectile
+		}
 	}
 }

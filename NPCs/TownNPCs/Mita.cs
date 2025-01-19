@@ -19,6 +19,7 @@ using MitaNPC.Items.Accessories;
 using MitaNPC.Items.Consumables;
 using MitaNPC.Items.Armor.Vanity;
 using MitaNPC.Items.PermanentBoosters;
+using Terraria.GameContent.Bestiary;
 
 namespace MitaNPC.NPCs.TownNPCs
 {
@@ -44,17 +45,18 @@ namespace MitaNPC.NPCs.TownNPCs
             NPCID.Sets.AttackTime[Type] = 10; // The amount of time it takes for the NPC's attack animation to be over once it starts. Measured in ticks. There are 60 ticks per second, so an amount of 90 will take 1.5 seconds.
             NPCID.Sets.AttackAverageChance[Type] = 1; // The denominator for the chance for a Town NPC to attack. Lower numbers make the Town NPC appear more aggressive.
             //NPCID.Sets.HatOffsetY[Type] = 4; // For when a party is active, the party hat spawns at a Y offset. Adjust this number to change where on your NPC's head the party hat sits.
+            
             NPC.Happiness
-                .SetBiomeAffection<UndergroundBiome>(AffectionLevel.Love)
-                .SetBiomeAffection<ForestBiome>(AffectionLevel.Like)
+                .SetBiomeAffection<ForestBiome>(AffectionLevel.Love)
+                .SetBiomeAffection<UndergroundBiome>(AffectionLevel.Like)
                 .SetBiomeAffection<HallowBiome>(AffectionLevel.Dislike)
                 .SetBiomeAffection<JungleBiome>(AffectionLevel.Dislike)
 
-                .SetNPCAffection(NPCID.Angler, AffectionLevel.Love)
-                .SetNPCAffection(NPCID.ArmsDealer, AffectionLevel.Like)
-                .SetNPCAffection(NPCID.Painter, AffectionLevel.Like)
-                .SetNPCAffection(NPCID.Demolitionist, AffectionLevel.Like)
-                .SetNPCAffection(NPCID.Truffle, AffectionLevel.Dislike)
+                .SetNPCAffection(ModContent.NPCType<MiSidePlayer>(), AffectionLevel.Love)
+                //.SetNPCAffection(NPCID.ArmsDealer, AffectionLevel.Like)
+                //.SetNPCAffection(NPCID.Painter, AffectionLevel.Like)
+                //.SetNPCAffection(NPCID.Demolitionist, AffectionLevel.Like)
+                //.SetNPCAffection(NPCID.Truffle, AffectionLevel.Dislike)
 
                 // Hates all girls (NPC)
                 .SetNPCAffection(NPCID.Nurse, AffectionLevel.Hate)
@@ -64,8 +66,15 @@ namespace MitaNPC.NPCs.TownNPCs
                 .SetNPCAffection(NPCID.Mechanic, AffectionLevel.Hate)
                 .SetNPCAffection(NPCID.PartyGirl, AffectionLevel.Hate)
                 .SetNPCAffection(NPCID.Steampunker, AffectionLevel.Hate)
-                .SetNPCAffection(NPCID.Princess, AffectionLevel.Hate)
-            ;
+                .SetNPCAffection(NPCID.Princess, AffectionLevel.Hate);
+
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers()
+            {
+                Velocity = 0.55f,
+                Direction = -1 // left
+            };
+
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
         }
 
         public override void SetDefaults()
@@ -321,7 +330,7 @@ namespace MitaNPC.NPCs.TownNPCs
             .Add(ModContent.ItemType<MitaMilaActivator>())
             .Add(ModContent.ItemType<Carrot>())
             .Add(ModContent.ItemType<TravelRing>(), Condition.Hardmode, Condition.DownedMechBossAll)
-            .Add(new Item(ItemID.PsychoKnife) { shopCustomPrice = Item.buyPrice(2, 50, 0, 0) }, Condition.Hardmode, Condition.BloodMoon)
+            .Add(new Item(ItemID.PsychoKnife) { shopCustomPrice = Item.buyPrice(platinum: 2, gold: 50) }, Condition.Hardmode, Condition.BloodMoon)
             .Register();
 
             NPCShop mitaCappie_Shop = new NPCShop(Type, MitaCappieShop);
@@ -409,6 +418,14 @@ namespace MitaNPC.NPCs.TownNPCs
 
             spriteBatch.Draw(NPCTexture, NPC.Center - screenPos + new Vector2(0, NPC.gfxOffY) - new Vector2(0f, 6f), NPC.frame, drawColor, NPC.rotation, NPC.frame.Size() / 2, NPC.scale, sprite_effects, 0);
             return false;
+        }
+
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+        {
+            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+		        new FlavorTextBestiaryInfoElement("Mods.MitaNPC.NPCs.Mita.BestiaryDescription")
+            });
         }
 
         public override void LoadData(TagCompound tag)

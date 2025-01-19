@@ -1,10 +1,11 @@
---- English ---
+################ English ################
 Your personal Mita from MiSide in Terraria!!!
 
-Adds a new NPC named Mita from the MiSide game.
-Features 2 voice acting options: Russian and Japanese
-Realized 2 text language options: Russian and English
-Implemented 3 skins: standart Mita, Cappie (Cool Mita), Mila
+Adds various items and two new NPCs from the MiSide game: Mita, Player
+Mita has 2 voice and text options: Russian + Russian, Japanese + English.
+Mita also has 3 skins: standart Mita, Cap (Cool Mita), Mila
+
+--- Mita ---
 
 Shop (skin - standart Mita):
 1. Game Cartridge (change of skin)
@@ -31,22 +32,40 @@ Shop (skin - Mila):
 
 Happiness conditions:
  - Biomes:
-   Loves: Underground
-   Likes: Forest
+   Loves: Forest
+   Likes: Underground
    Dislikes: Hallow biome and Jungle
  - NPCs:
-   Loves: Angler
-   Likes: Arms Dealer, Painter, Demolitionist
-   Dislikes: Truffle
+   Loves: Player
+   Likes: ...
+   Dislikes: ...
    Hates: All female NPCs (Nurse, Zoologist, Dryad, Stylist, Mechanic, Party Girl, Steampunker, Princess)
 
---- Русский ---
+--- Player ---
+
+Shop:
+1. Game Console
+2. Ramen
+
+Happiness conditions:
+ - Biomes:
+   Loves: Forest
+   Likes: Hallow biome
+   Dislikes: Desert and Underground
+ - NPCs:
+   Loves: Mita
+   Likes: ...
+   Dislikes: ...
+   Hates: All female NPCs (Nurse, Zoologist, Dryad, Stylist, Mechanic, Party Girl, Steampunker, Princess)
+
+################ Русский ################
 Ваша личная Мита из MiSide в Terraria!!!
 
-Добавляет нового NPC по имени Мита из игры MiSide.
-Имеет 2 варианта озвучки: Русский и Японский
-Реализовано 2 варианта языка текста: Русский и Английский
-Реализовано 3 скина: обычная Мита, Кепочка (Крутая Мита), Мила
+Добавляет различные предметы и двух новых NPC из игры MiSide: Миту, Игрока
+Мита имеет 2 варианта озвучки и текста: Русский + Русский, Японский + Английский
+Также у Миты есть 3 скина: обычная Мита, Кепочка (Крутая Мита), Мила
+
+--- Мита ---
 
 Магазин (скин - обычная Мита):
 1. Игровой картридж (смена скина)
@@ -73,11 +92,28 @@ Happiness conditions:
 
 Условия Счастья:
  - Биомы:
-   Любит: Подземелье
-   Нравится: Лес
+   Любит: Лес
+   Нравится: Подземелья
    Не нравится: Святой биом и Джунгли
  - NPCs:
-   Любит: Рыбака
-   Нравится: Оружейник, Маляр, Подрывник
-   Не нравится: Трюфель
+   Любит: Игрока
+   Нравится: ...
+   Не нравится: ...
+   Ненавидит: Всех женских НПС (Медсестру, Зоолога, Дриаду, Стилиста, Механика, Тусовщицу, Стимпанкера, Принцессу)
+
+--- Игрок ---
+
+Магазин:
+1. Игровая консоль
+2. Рамен
+
+Условия Счастья:
+ - Биомы:
+   Любит: Лес
+   Нравится: Святой биом
+   Не нравится: Пустыня и Подземелье
+ - NPCs:
+   Любит: Миту
+   Нравится: ...
+   Не нравится: ...
    Ненавидит: Всех женских НПС (Медсестру, Зоолога, Дриаду, Стилиста, Механика, Тусовщицу, Стимпанкера, Принцессу)

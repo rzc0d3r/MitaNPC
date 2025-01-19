@@ -1,8 +1,9 @@
-﻿using MitaNPC.Common;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
+
+using MitaNPC.Common;
 
 namespace MitaNPC.Items.PermanentBoosters
 {
@@ -21,7 +22,7 @@ namespace MitaNPC.Items.PermanentBoosters
             Item.UseSound = SoundID.Item92;
             Item.consumable = true;
 
-            Item.value = Item.buyPrice(0, 0, 15, 0);
+            Item.value = Item.buyPrice(0, 15, 0, 0);
             Item.rare = ItemRarityID.Blue;
 
             Item.buffType = BuffID.Honey; // Without it, Item will be infinite and don't works

@@ -44,7 +44,7 @@ namespace MitaNPC.Items.Consumables
                     {
                         ModPacket packet = Mod.GetPacket();
                         packet.Write((byte)MitaNPC.MitaNPCMessageType.MitaSkinManager);
-                        packet.Write(true); // true - edit Mita skin on Server
+                        packet.Write(true);     // true - edit Mita skin on Server
                         packet.Write(MitaSkin); // second argument is true -> it argument is readed by Server)
                         packet.Write(true);
                         packet.Send();
