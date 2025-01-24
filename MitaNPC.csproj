@@ -8,6 +8,7 @@
 		
 	</PropertyGroup>
 	<ItemGroup>
+	  <None Remove="Items\Pets\AlarmClock.png" />
 	</ItemGroup>
 
 	<!-- References -->

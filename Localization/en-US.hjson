@@ -219,6 +219,11 @@ Mods: {
 				DisplayName: Ramen
 				Tooltip: "{$CommonItemTooltip.MajorStats}"
 			}
+
+			AlarmClock: {
+				DisplayName: Alarm Clock
+				Tooltip: Summons Broken Mita, who follows you
+			}
 		}
 
 		Keybinds.TravelRingHotKey.DisplayName: Travel Ring
@@ -228,11 +233,17 @@ Mods: {
 				DisplayName: Fly
 				Description: The Fly follows you
 			}
+
+			AlarmClockBuff: {
+				DisplayName: Broken Mita
+				Description: Broken Mita follows you
+			}
 		}
 
 		Projectiles: {
 			ExamplePetProjectile.DisplayName: Example Pet Projectile
 			FlyPetProjectile.DisplayName: Fly Pet Projectile
+			BrokenMitaPetProjectile.DisplayName: Broken Mita Pet Projectile
 		}
 	}
 }

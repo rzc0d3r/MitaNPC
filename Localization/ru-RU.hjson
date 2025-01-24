@@ -219,6 +219,11 @@ Mods: {
 				DisplayName: Рамен
 				Tooltip: "{$CommonItemTooltip.MajorStats}"
 			}
+
+			AlarmClock: {
+				DisplayName: Будильник
+				Tooltip: Призывает Сломанную Миту, которая следует за вами
+			}
 		}
 
 		Keybinds.TravelRingHotKey.DisplayName: Кольцо путешественника
@@ -228,11 +233,17 @@ Mods: {
 				DisplayName: Муха
 				Description: За вами следует Муха
 			}
+
+			AlarmClockBuff: {
+				DisplayName: Сломанная Мита
+				Description: За вами следует Сломанная Мита
+			}
 		}
 
 		Projectiles: {
 			// ExamplePetProjectile.DisplayName: Example Pet Projectile
 			// FlyPetProjectile.DisplayName: Fly Pet Projectile
+			// BrokenMitaPetProjectile.DisplayName: Broken Mita Pet Projectile
 		}
 	}
 }

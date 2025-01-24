@@ -170,7 +170,8 @@ namespace MitaNPC.NPCs.TownNPCs
         {
             NPCShop shop1 = new NPCShop(Type, Shop1);
             shop1.Add(ModContent.ItemType<GameConsole>())
-            .Add(ModContent.ItemType<Ramen>());
+            .Add(ModContent.ItemType<Ramen>())
+            .Add(ModContent.ItemType<AlarmClock>());
             shop1.Register();
         }
 

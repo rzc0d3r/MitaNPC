@@ -46,6 +46,7 @@ Happiness conditions:
 Shop:
 1. Game Console
 2. Ramen
+3. Alarm Clock
 
 Happiness conditions:
  - Biomes:
@@ -106,6 +107,7 @@ Happiness conditions:
 Магазин:
 1. Игровая консоль
 2. Рамен
+3. Будильник
 
 Условия Счастья:
  - Биомы:
