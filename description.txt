@@ -55,6 +55,9 @@ Happiness conditions:
 
 Spawn conditions: Always (during the day)
 
+Source code of the mod: https://github.com/rzc0d3r/MitaNPC
+Discord channel: https://discord.gg/yX3VjHwu3B
+
 ################ Русский ################
 Ваши личные Миты из MiSide в Terraria!!!
 
@@ -111,3 +114,6 @@ Spawn conditions: Always (during the day)
    Ненавидит: Всех женских НПС (Медсестру, Зоолога, Дриаду, Стилиста, Механика, Тусовщицу, Стимпанкера, Принцессу)
 
 Условия спавна: Всегда (в дневное время)
+
+Исходный код: https://github.com/rzc0d3r/MitaNPC
+Discord канал: https://discord.gg/yX3VjHwu3B
