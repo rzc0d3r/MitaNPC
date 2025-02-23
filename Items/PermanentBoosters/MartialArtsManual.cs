@@ -13,7 +13,7 @@ namespace MitaNPC.Items.PermanentBoosters
         public override void SetDefaults()
         {
             Item.width = 28;
-            Item.height = 30;
+            Item.height = 34;
             Item.useTurn = true;
             Item.maxStack = Item.CommonMaxStack;
             Item.useAnimation = 50;

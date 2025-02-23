@@ -119,6 +119,63 @@ Mods: {
 					HateNPC: I hate {NPCName}.
 				}
 			}
+
+			Mila: {
+				DisplayName: Mila
+				BestiaryDescription:
+					'''
+					Mila is an eccentric and defiant individual who sets herself apart from the other Mitas.
+					Her actions suggest that the player is her first visitor in years, and despite her sarcastic tone,
+					she subtly tries to keep him around, showing her desire for companionship.
+					'''
+
+				TownNPCMood: {
+					Content: I'm happy! I like being here. It's peaceful.
+					NoHome: I wish I had a home.
+					FarFromHome: I'm too far from home.
+					LoveSpace: I like having few people around.
+					DislikeCrowded: I don't like the noise around me!
+					HateCrowded: I hate those people around me!!!
+					LikeNPC_Princess: I like {NPCName}.
+					Princess_LovesNPC: I like {NPCName}.
+					LoveBiome: I love {BiomeName}.
+					LikeBiome: I like {BiomeName}.
+					DislikeBiome: I don't like {BiomeName}.
+					LoveNPC: I like {NPCName}.
+					LikeNPC: I like {NPCName}.
+					DislikeNPC: I don't like {NPCName}.
+					HateNPC: I hate {NPCName}.
+				}
+			}
+
+			Cappie: {
+				DisplayName: Cappie
+				BestiaryDescription:
+					'''
+					Cappie is bright, cheerful, and loves music, dancing, and acting.
+					She is always teasing the player, showing her competitive side.
+					Despite her playful nature, she knows her boundaries and never crosses them, keeping things friendly.
+					Although she is full of energy, Cappie is not a lightweight.
+					'''
+
+				TownNPCMood: {
+					Content: I'm happy! I like being here. It's peaceful.
+					NoHome: I wish I had a home.
+					FarFromHome: I'm too far from home.
+					LoveSpace: I like having few people around.
+					DislikeCrowded: I don't like the noise around me!
+					HateCrowded: I hate those people around me!!!
+					LikeNPC_Princess: I like {NPCName}.
+					Princess_LovesNPC: I like {NPCName}.
+					LoveBiome: I love {BiomeName}.
+					LikeBiome: I like {BiomeName}.
+					DislikeBiome: I don't like {BiomeName}.
+					LoveNPC: I like {NPCName}.
+					LikeNPC: I like {NPCName}.
+					DislikeNPC: I don't like {NPCName}.
+					HateNPC: I hate {NPCName}.
+				}
+			}
 		}
 
 		Items: {
@@ -144,33 +201,6 @@ Mods: {
 					'''
 					{$CommonItemTooltip.MediumStats}
 					'And then cut carrots, and then...'
-					'''
-			}
-
-			MitaCappieActivator: {
-				DisplayName: Cappie Activator (change of skin)
-				Tooltip:
-					'''
-					Turns the current Mita into a Cappie (Cool Mita)
-					Only consumable if Mita is in your world!
-					'''
-			}
-
-			MitaDefaultActivator: {
-				DisplayName: Game Cartridge (change of skin)
-				Tooltip:
-					'''
-					Turns the current Mita into a standart Mita
-					Only consumed if the Mita is in your world!
-					'''
-			}
-
-			MitaMilaActivator: {
-				DisplayName: Mila's Book (change of skin)
-				Tooltip:
-					'''
-					Turns the current Mita into Mila
-					Only consumable if Mita is in your world!
 					'''
 			}
 
@@ -224,6 +254,20 @@ Mods: {
 				DisplayName: Alarm Clock
 				Tooltip: Summons Broken Mita, who follows you
 			}
+
+			GameCartridge: {
+				DisplayName: Game Cartridge
+				Tooltip: Throw the game cartridge right in the face of your enemies
+			}
+
+			MilasBook: {
+				DisplayName: Mila's Book
+				Tooltip:
+					'''
+					Shoots out numbers and letters
+					'The power of knowledge!'
+					'''
+			}
 		}
 
 		Keybinds.TravelRingHotKey.DisplayName: Travel Ring
@@ -244,6 +288,8 @@ Mods: {
 			ExamplePetProjectile.DisplayName: Example Pet Projectile
 			FlyPetProjectile.DisplayName: Fly Pet Projectile
 			BrokenMitaPetProjectile.DisplayName: Broken Mita Pet Projectile
+			GameCartridgeProjectile.DisplayName: Game Cartridge Projectile
+			MilasBookProjectile.DisplayName: Milas Book Projectile
 		}
 	}
 }

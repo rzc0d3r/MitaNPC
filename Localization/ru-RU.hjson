@@ -119,6 +119,63 @@ Mods: {
 					HateNPC: Я ненавижу {NPCName}.
 				}
 			}
+
+			Mila: {
+				DisplayName: Мила
+				BestiaryDescription:
+					'''
+					Мила - эксцентричная и вызывающая личность, которая выделяет себя среди других Мит.
+					Судя по ее действиям, игрок - ее первый посетитель за много лет, и, несмотря на саркастический тон,
+					она тонко пытается удержать его рядом, демонстрируя свое стремление к дружескому общению.
+					'''
+
+				TownNPCMood: {
+					Content: Я счастлива! Мне нравится быть здесь. Тут так уютненько)
+					NoHome: Я бы хотела чтобы у меня был дом :(
+					FarFromHome: Я слишком далеко от дома. Это меня расстраивает :(
+					LoveSpace: Я люблю когда мало людей вокруг, не люблю лишние взгляды)
+					DislikeCrowded: Мне не нравится шум вокруг!
+					HateCrowded: Я ненавижу всех этих людей вокруг!!!
+					LikeNPC_Princess: Мне нравится {NPCName}.
+					Princess_LovesNPC: Мне нравится {NPCName}.
+					LoveBiome: Я люблю {BiomeName}.
+					LikeBiome: Мне нравится {BiomeName}.
+					DislikeBiome: Мне не нравится {BiomeName}.
+					LoveNPC: Я люблю {NPCName}.
+					LikeNPC: Мне нравится {NPCName}.
+					DislikeNPC: Мне не нравится {NPCName}.
+					HateNPC: Я ненавижу {NPCName}.
+				}
+			}
+
+			Cappie: {
+				DisplayName: Кепочка
+				BestiaryDescription:
+					'''
+					Кепочка — яркая, жизнерадостная, любящий музыку, танцы и актерское мастерство.
+					Она постоянно подшучивает над игроками, показывая свою конкурентную сторону.
+					Несмотря на игривый характер, она знает свои границы и никогда не переходит их, сохраняя дружеские отношения.
+					Хотя она полна энергии, Кэппи нельзя назвать легковесной.
+					'''
+
+				TownNPCMood: {
+					Content: Я счастлива! Мне нравится быть здесь. Тут так уютненько)
+					NoHome: Я бы хотела чтобы у меня был дом :(
+					FarFromHome: Я слишком далеко от дома. Это меня расстраивает :(
+					LoveSpace: Я люблю когда мало людей вокруг, не люблю лишние взгляды)
+					DislikeCrowded: Мне не нравится шум вокруг!
+					HateCrowded: Я ненавижу всех этих людей вокруг!!!
+					LikeNPC_Princess: Мне нравится {NPCName}.
+					Princess_LovesNPC: Мне нравится {NPCName}.
+					LoveBiome: Я люблю {BiomeName}.
+					LikeBiome: Мне нравится {BiomeName}.
+					DislikeBiome: Мне не нравится {BiomeName}.
+					LoveNPC: Я люблю {NPCName}.
+					LikeNPC: Мне нравится {NPCName}.
+					DislikeNPC: Мне не нравится {NPCName}.
+					HateNPC: Я ненавижу {NPCName}.
+				}
+			}
 		}
 
 		Items: {
@@ -144,33 +201,6 @@ Mods: {
 					'''
 					{$CommonItemTooltip.MediumStats}
 					«А потом резать морковку, а потом...»
-					'''
-			}
-
-			MitaCappieActivator: {
-				DisplayName: Активатор Кепочки (смена скина)
-				Tooltip:
-					'''
-					Превращает текущую Миту в Кепочку (Крутая Мита)
-					Расходуется только если Мита находится в вашем мире!!!
-					'''
-			}
-
-			MitaDefaultActivator: {
-				DisplayName: Игровой картридж (смена скина)
-				Tooltip:
-					'''
-					Превращает текущую Миту в обычную Миту
-					Расходуется только если Мита находится в вашем мире!!!
-					'''
-			}
-
-			MitaMilaActivator: {
-				DisplayName: Книга Милы (смена скина)
-				Tooltip:
-					'''
-					Превращает текущую Миту в Милу
-					Расходуется только если Мита находится в вашем мире!!!
 					'''
 			}
 
@@ -224,6 +254,20 @@ Mods: {
 				DisplayName: Будильник
 				Tooltip: Призывает Сломанную Миту, которая следует за вами
 			}
+
+			GameCartridge: {
+				DisplayName: Игровой картридж
+				Tooltip: «Бросьте игровой картридж прямо в лицо своим врагам»
+			}
+
+			MilasBook: {
+				DisplayName: Книга Милы
+				Tooltip:
+					'''
+					Выстреливает цифрами и буквами
+					«Сила знаний!»
+					'''
+			}
 		}
 
 		Keybinds.TravelRingHotKey.DisplayName: Кольцо путешественника
@@ -244,6 +288,8 @@ Mods: {
 			// ExamplePetProjectile.DisplayName: Example Pet Projectile
 			// FlyPetProjectile.DisplayName: Fly Pet Projectile
 			// BrokenMitaPetProjectile.DisplayName: Broken Mita Pet Projectile
+			// GameCartridgeProjectile.DisplayName: Game Cartridge Projectile
+			// MilasBookProjectile.DisplayName: Milas Book Projectile
 		}
 	}
 }

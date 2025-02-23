@@ -4,7 +4,6 @@ using Terraria.GameInput;
 using Terraria.ModLoader;
 
 using Microsoft.Xna.Framework;
-using static MitaNPC.MitaNPC;
 using Terraria.ModLoader.IO;
 
 namespace MitaNPC.Common
@@ -50,15 +49,15 @@ namespace MitaNPC.Common
 
         public override void OnEnterWorld()
         {
-            if (Main.netMode == NetmodeID.MultiplayerClient)
-            {
-                ModPacket packet = Mod.GetPacket();
-                packet.Write((byte)MitaNPCMessageType.MitaSkinManager);
-                packet.Write(false); // get the Mita skin from Server, rather than modifying the Mita skin on Server
-                packet.Write(-1);    // just filling in with something (if second argument is false -> it argument is ignored by Server)
-                packet.Write(true);  // true - receive reply packet
-                packet.Send();
-            }
+            //if (Main.netMode == NetmodeID.MultiplayerClient)
+            //{
+            //    ModPacket packet = Mod.GetPacket();
+            //    packet.Write((byte)MitaNPCMessageType.MitaSkinManager);
+            //    packet.Write(false); // get the Mita skin from Server, rather than modifying the Mita skin on Server
+            //    packet.Write(-1);    // just filling in with something (if second argument is false -> it argument is ignored by Server)
+            //    packet.Write(true);  // true - receive reply packet
+            //    packet.Send();
+            //}
         }
 
         public override void ModifyWeaponDamage(Item item, ref StatModifier damage)

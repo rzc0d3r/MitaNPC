@@ -13,13 +13,13 @@ using Terraria.GameContent.Bestiary;
 using MitaNPC.Items.Pets;
 using MitaNPC.Items.Potions;
 
+using MitaNPC.NPCs.TownNPCs.Mitas.Mita;
+
 namespace MitaNPC.NPCs.TownNPCs
 {
     [AutoloadHead]
-    public class MiSidePlayer: ModNPC
+    public class MiSidePlayer : ModNPC
     {
-        public const string Shop1 = "Shop1";
-
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[Type] = 25; // The total amount of frames the NPC has. You may need to change this based on how many frames your sprite sheet has.
@@ -30,8 +30,8 @@ namespace MitaNPC.NPCs.TownNPCs
             NPCID.Sets.AttackType[Type] = 3; // The type of attack the Town NPC performs. 0 = throwing, 1 = shooting, 2 = magic, 3 = melee
             NPCID.Sets.AttackTime[Type] = 10; // The amount of time it takes for the NPC's attack animation to be over once it starts. Measured in ticks. There are 60 ticks per second, so an amount of 90 will take 1.5 seconds.
             NPCID.Sets.AttackAverageChance[Type] = 1; // The denominator for the chance for a Town NPC to attack. Lower numbers make the Town NPC appear more aggressive.
-            //NPCID.Sets.HatOffsetY[Type] = 4; // For when a party is active, the party hat spawns at a Y offset. Adjust this number to change where on your NPC's head the party hat sits.
-            
+                                                      //NPCID.Sets.HatOffsetY[Type] = 4; // For when a party is active, the party hat spawns at a Y offset. Adjust this number to change where on your NPC's head the party hat sits.
+
             NPC.Happiness
                 .SetBiomeAffection<ForestBiome>(AffectionLevel.Love)
                 .SetBiomeAffection<HallowBiome>(AffectionLevel.Like)
@@ -163,16 +163,16 @@ namespace MitaNPC.NPCs.TownNPCs
         public override void OnChatButtonClicked(bool firstButton, ref string shopName)
         {
             if (firstButton)
-                shopName = Shop1;
+                shopName = "Shop";
         }
 
         public override void AddShops()
         {
-            NPCShop shop1 = new NPCShop(Type, Shop1);
-            shop1.Add(ModContent.ItemType<GameConsole>())
+            NPCShop shop = new NPCShop(Type, "Shop");
+            shop.Add(ModContent.ItemType<GameConsole>())
             .Add(ModContent.ItemType<Ramen>())
-            .Add(ModContent.ItemType<AlarmClock>());
-            shop1.Register();
+            .Add(ModContent.ItemType<AlarmClock>())
+            .Register();
         }
 
         public override void TownNPCAttackSwing(ref int itemWidth, ref int itemHeight)
@@ -183,34 +183,18 @@ namespace MitaNPC.NPCs.TownNPCs
 
         public override void DrawTownAttackSwing(ref Texture2D item, ref Rectangle itemFrame, ref int itemSize, ref float scale, ref Vector2 offset)
         {
-            // This hook takes a Texture2D instead of an int for the item. That means the weapon our Town NPC uses doesn't need to be an existing item.
-            // But, that also means we need to load the texture ourselves. Luckily, GetItemDrawFrame() can do the work for us.
-            // The first parameter is what you set as the item.
-            // Then, there are two "out" parameters. We can use those out parameters.
             Main.GetItemDrawFrame(ItemID.Ruler, out Texture2D itemTexture, out Rectangle itemRectangle);
 
-            // Set the item texture to the item texture.
             item = itemTexture;
-
-            // This is the source rectangle for the texture that will be drawn.
-            // In this case, it is just the entire bounds of the texture because it has only one frame.
-            // You could change this if your texture has multiple frames to be animated.
             itemFrame = itemRectangle;
-
-            // Set the size of the item to the size of one of the dimensions. This will always be a square, but it doesn't matter that much.
-            // itemSize is only used to determine how far into the swing animation it should be.
             itemSize = itemRectangle.Width;
-
-            // The scale affects how far the arc of the swing is from the Town NPC.
-            // This is not how large the item will be drawn on the screen.
-            // A scale of 0 will draw the swing directly on the Town NPC.
-            // We set it to 0.15f so it the arc is slightly in front of the Town NPC.
             scale = 1f;
 
-            // offset will change the position of the item.
-            // Change this to match with the location of the Town NPC's hand.
             // Remember, positive Y values go down.
-            offset = new Vector2(2, 0);
+            if (NPC.spriteDirection == -1)
+                offset = new Vector2(-2f, 0);
+            else
+                offset = new Vector2(2f, 0);
         }
 
         public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown)

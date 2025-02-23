@@ -9,8 +9,8 @@ namespace MitaNPC.Items.Armor.Vanity
     {
         public override void SetDefaults()
         {
-            Item.width = 22;
-            Item.height = 12;
+            Item.width = 30;
+            Item.height = 16;
             Item.rare = ItemRarityID.Blue;
             Item.vanity = true;
             Item.value = Item.buyPrice(0, 2, 0, 0);

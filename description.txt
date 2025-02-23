@@ -1,34 +1,26 @@
 ################ English ################
-Your personal Mita from MiSide in Terraria!!!
+Your personal Mitas from MiSide in Terraria!!!
 
-Adds various items and two new NPCs from the MiSide game: Mita, Player
-Mita has 2 voice and text options: Russian + Russian, Japanese + English.
-Mita also has 3 skins: standart Mita, Cap (Cool Mita), Mila
+Adds various items and 4 new NPCs from MiSide game: Crazy Mita, Cappie, Mila, Player
+All NPCs have 2 variants of voice and text: Russian + Russian, Japanese + English
 
---- Mita ---
+--- Mitas ---
 
-Shop (skin - standart Mita):
-1. Game Cartridge (change of skin)
-2. Cappie Activator (change of skin)
-3. Mila's Book (change of skin)
-4. Carrot
-5. Travel Ring (Conditions of sale: World in Hardmode, all mechanical bosses defeated) - Analog of the Normality Relocator from Calamity, Default HotKey is Q
-6. Psycho Knife (Conditions of sale: World in hardmode, during Blood Moon)
+Shop (Crazy Mita):
+1. Game Cartridge
+2. Carrot
+3. Travel Ring (Conditions of sale: World in Hardmode, all mechanical bosses defeated) - Analog of the Normality Relocator from Calamity, Default HotKey is Q
+4. Psycho Knife (Conditions of sale: World in hardmode, during Blood Moon)
 
-Shop (skin - Cappie):
-1. Game Cartridge (change of skin)
-2. Cappie Activator (change of skin)
-3. Mila's Book (change of skin)
-4. Mita's Cap
+Shop (Cappie):
+1. Mita's Cap
 
-Shop (skin - Mila):
-1. Game Cartridge (change of skin)
-2. Cappie Activator (change of skin)
-3. Mila's Book (change of skin)
-4. Martial Arts Manual
-5. Shooters Manual
-6. Magicians Manual
-7. Pokemon Manual
+Shop (Mila):
+1. Mila's Book
+2. Martial Arts Manual
+3. Shooters Manual
+4. Magicians Manual
+5. Pokemon Manual
 
 Happiness conditions:
  - Biomes:
@@ -40,6 +32,8 @@ Happiness conditions:
    Likes: ...
    Dislikes: ...
    Hates: All female NPCs (Nurse, Zoologist, Dryad, Stylist, Mechanic, Party Girl, Steampunker, Princess)
+
+Spawn conditions: Always (during the day)
 
 --- Player ---
 
@@ -59,37 +53,31 @@ Happiness conditions:
    Dislikes: ...
    Hates: All female NPCs (Nurse, Zoologist, Dryad, Stylist, Mechanic, Party Girl, Steampunker, Princess)
 
+Spawn conditions: Always (during the day)
+
 ################ Русский ################
-Ваша личная Мита из MiSide в Terraria!!!
+Ваши личные Миты из MiSide в Terraria!!!
 
-Добавляет различные предметы и двух новых NPC из игры MiSide: Миту, Игрока
-Мита имеет 2 варианта озвучки и текста: Русский + Русский, Японский + Английский
-Также у Миты есть 3 скина: обычная Мита, Кепочка (Крутая Мита), Мила
+Добавляет различные предметы и 4 новых NPC из игры MiSide: Сумасшедшую Миту, Кепочку, Милу, Игрока
+Все NPC имеют 2 варианта озвучки и текста: Русский + Русский, Японский + Английский
 
---- Мита ---
+--- Миты ---
 
-Магазин (скин - обычная Мита):
-1. Игровой картридж (смена скина)
-2. Активатор Кепочки (смена скина)
-3. Книга Милы (смена скина)
-4. Морковка
-5. Кольцо путешественника (Условия продажи: Мир в Хардмоде, Побеждены все механические боссы) - Аналог Релокатора нормальной формы из Calamity, Горячая клавиша по умолчанию - Q
-6. Нож психа (Условия продажи: Мир в Хардмоде, во время Кровавой Луны)
+Магазин (Сумасшедшая Мита):
+1. Игровой картридж
+2. Морковка
+3. Кольцо путешественника (Условия продажи: Мир в Хардмоде, Побеждены все механические боссы) - Аналог Релокатора нормальной формы из Calamity, Горячая клавиша по умолчанию - Q
+4. Нож психа (Условия продажи: Мир в Хардмоде, во время Кровавой Луны)
 
-Магазин (скин - Кепочка):
-1. Игровой картридж (смена скина)
-2. Активатор Кепочки (смена скина)
-3. Книга Милы (смена скина)
-4. Кепочка Миты
+Магазин (Кепочка):
+1. Кепочка Миты
 
-Магазин (скин - Мила):
-1. Игровой картридж (смена скина)
-2. Активатор Кепочки (смена скина)
-3. Книга Милы (смена скина)
-4. Руководство по боевым искусствам (Постоянное усиление)
-5. Руководство для стрелка (Постоянное усиление)
-6. Руководство для мага (Постоянное усиление)
-7. Руководство по покемонам (Постоянное усиление)
+Магазин (Мила):
+1. Книга Милы
+2. Руководство по боевым искусствам (Постоянное усиление)
+3. Руководство для стрелка (Постоянное усиление)
+4. Руководство для мага (Постоянное усиление)
+5. Руководство по покемонам (Постоянное усиление)
 
 Условия Счастья:
  - Биомы:
@@ -101,6 +89,8 @@ Happiness conditions:
    Нравится: ...
    Не нравится: ...
    Ненавидит: Всех женских НПС (Медсестру, Зоолога, Дриаду, Стилиста, Механика, Тусовщицу, Стимпанкера, Принцессу)
+
+Условия спавна: Всегда (в дневное время)
 
 --- Игрок ---
 
@@ -119,3 +109,5 @@ Happiness conditions:
    Нравится: ...
    Не нравится: ...
    Ненавидит: Всех женских НПС (Медсестру, Зоолога, Дриаду, Стилиста, Механика, Тусовщицу, Стимпанкера, Принцессу)
+
+Условия спавна: Всегда (в дневное время)
